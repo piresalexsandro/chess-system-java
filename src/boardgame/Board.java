@@ -30,5 +30,14 @@ public class Board {
 
 	public void setColumn(int column) {
 		this.column = column;
-	}	
+	}
+	
+	public Piece piece(int row, int column) { // retorna um objeto do tipo Piece e o nome e piece
+		return pieces[row][column];
+	}
+	
+	public Piece piece(Position position) { // retorna um objeto do tipo Piece e o nome e piece recebe a posição
+		return pieces[position.getRow()][position.getColumn()];
+	}
+	
 }
