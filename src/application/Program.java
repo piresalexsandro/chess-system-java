@@ -3,8 +3,6 @@ package application;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import javax.swing.plaf.synth.SynthSeparatorUI;
-
 import chess.ChessException;
 import chess.ChessMatch;
 import chess.ChessPiece;
@@ -25,7 +23,12 @@ public class Program {
 				System.out.print("Source: ");
 				ChessPosition source = UI.readChessPosition(sc);
 				
-				//System.out.println();
+				boolean[][] possibleMoves = chessMatch.possibleMoves(source);
+				UI.clearScreen();
+				UI.printBoard(chessMatch.getPieces(), possibleMoves);
+				
+				
+				System.out.println();
 				System.out.print("Target: ");
 				ChessPosition target = UI.readChessPosition(sc);
 				
